@@ -1,6 +1,4 @@
-CREATE TABLE log(id serial primary key, 
-	pid varchar(10) not null, 
-	time int not null,x real not null,y real not null);
+CREATE TABLE log(id serial primary key, pid varchar(10) not null, time int not null,x real not null,y real not null);
 
 
-select * from log l where l.pid = 'c0' and time > 0 and time < 1000;
+select * from log l where l.x < 2274 and l.x > 2250 and l.y > 2100 and l.y < 2200 and l.time = 30 ;

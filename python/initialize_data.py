@@ -3,8 +3,11 @@ import psycopg2 as pg
 #easy_install pip
 #pip install psycopg2
 #CREATE TABLE log(id serial primary key, pid varchar(10) not null, time int not null,x real not null,y real not null);
-file_path = '../initial_data/sim.xml'
-conn = pg.connect("dbname='tyler' user='tyler' host='localhost' password='tyler'")
+
+file_path = '../initial_data/geolife/geo.xml'
+simDB = "dbname='tyler' user='tyler' host='localhost' password='tyler'"
+geolifeDB = "dbname='geolife' user='tyler' host='localhost' password='tyler'"
+conn = pg.connect(geolifeDB)
 
 
 

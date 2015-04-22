@@ -6,48 +6,70 @@
 	<link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-	<div class="row">
+	<div class="row center">
 		<div class="span12 center"><h1>Spatio-Temporal Madness</h1> </div>
-	</div>
 
-	<div class="row">
+      <div class="btn-group db-select" role="group" aria-label="...">
+       <button type="button" id="sim-db" class="btn btn-info db-option active">Simulated Data</button>
+       <button type="button" id="geo-db" class="btn btn-info db-option">Geo Life Data</button>
+    </div>
+ </div>
+
+ <div class="row">
    		<!-- <div class="span4"><button class="btn btn-primary">This is a button</button></div>
    		<div class="span5">This is another form</div> -->
 
    		<div class="col-md-6">
-   			<form>
-   				<div class="form-group">
-   					<label for="personid">Person ID</label>
-   					<input type="text" class="form-control" id="personid" placeholder="Enter Person ID">
-   				</div>
+            <h3>Path of Person</h3>
+            <form>
+              <div class="form-group">
+                <label for="personid">Person ID</label>
+                <input type="text" class="form-control" id="personid" placeholder="Enter Person ID">
+             </div>
 
-   				<div class="form-group">
-   					<label for="timeone">Time 1</label>
-   					<input type="text" class="form-control" id="timeone" placeholder="Enter First Time">
-   				</div>
+             <div class="form-group">
+                <label for="timeone">Start Time</label>
+                <input type="text" class="form-control" id="timeone" placeholder="Enter Start Time">
+             </div>
 
-   				<div class="form-group">
-   					<label for="timetwo">Time 2</label>
-   					<input type="text" class="form-control" id="timetwo" placeholder="Enter Second Time">
-   				</div>
-   				<button type="submit" id="path-btn" class="btn btn-default">Submit</button>
-   			</form>
-   		</div>
-   		<div class="col-md-6">
-   			<form>
-   				<div class="form-group">
-   					<label for="exampleInputEmail1">Email address</label>
-   					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-   				</div>
-   				<button type="submit" class="btn btn-default">Submit</button>
-   			</form></div>
-   		</div>
-   		<div class="row center"><div id="map-canvas"></div></div>
-   		
-</body>
-   		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-   		<script type="text/javascript" src="/external/jquery/dist/jquery.js"></script>
-   		<script type="text/javascript" src="/external/bootstrap/dist/js/bootstrap.js"></script>
-   		<script type="text/javascript" src="/javascripts/index.js"></script>
+             <div class="form-group">
+                <label for="timetwo">End Time</label>
+                <input type="text" class="form-control" id="timetwo" placeholder="Enter End Time">
+             </div>
+             <button type="submit" id="path-btn" class="btn btn-primary">Submit</button>
+          </form>
+       </div>
 
-   		</html>
+
+       <div class="col-md-6">
+         <h3>Region of People</h3>
+         <form>
+           <div class="form-group">
+             <label for="x1">x1</label>
+             <input type="text" class="form-control" id="x1" placeholder="Enter x1 (0-2500)">
+
+             <label for="y1">y1</label>
+             <input type="text" class="form-control" id="y1" placeholder="Enter y1 (0-2500)">
+
+             <label for="x2">x2</label>
+             <input type="text" class="form-control" id="x2" placeholder="Enter x2 (0-2500)">
+
+             <label for="y2">y2</label>
+             <input type="text" class="form-control" id="y2" placeholder="Enter y2 (0-2500)">
+
+             <label for="time">Time</label>
+             <input type="text" class="form-control" id="time" placeholder="Enter Time">
+
+          </div>
+          <button id="region-btn" type="submit" class="btn btn-primary">Submit</button>
+       </form></div>
+    </div>
+    <div class="row center"><div id="map-canvas"></div></div>
+
+ </body>
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+ <script type="text/javascript" src="/external/jquery/dist/jquery.js"></script>
+ <script type="text/javascript" src="/external/bootstrap/dist/js/bootstrap.js"></script>
+ <script type="text/javascript" src="/javascripts/index.js"></script>
+
+ </html>
