@@ -33,3 +33,6 @@ npm-debug.log
 python/venv
 *.csv
 *.xml
+
+
+.DS_Store
