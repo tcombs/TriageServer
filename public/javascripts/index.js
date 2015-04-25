@@ -30,12 +30,13 @@ $(function(){
 			personPath = [];
 			for(var i = 0; i < data.length; i++)
 			{
+				$('#rowsRet').text(data.length);
 				var x = data[i].x;
 				var y = data[i].y;
 				console.log(x + ' ' + y);
 				if(sim){
-					x = (x/2500)*(50*1/69) - 97.4458;
-					y = (y/2500)*(50*1/69) + 35.2086;
+					x = (x/2000)*(3*1/69) - 97.4458;
+					y = (y/2000)*(3*1/69) + 35.2086;
 				}
 				
 				personPath.push(new google.maps.LatLng(y,x));
@@ -74,6 +75,7 @@ $('#region-btn').click(function(e){
 		var sim = $('#sim-db').hasClass('active');
 
 		$.get("region",{x1:x1,x2:x2,y1:y1,y2:y2,time:time,sim:sim} , function(data, status){
+			$('#rowsRet').text(data.length);
 			for(var i = 0; i < data.length; i++)
 			{
 				var x = data[i].x;
@@ -82,24 +84,27 @@ $('#region-btn').click(function(e){
 				if(data[i].pid.indexOf("p") > -1) {
 					image = 'images/redcross.png';
 				}
+				else if(data[i].pid.indexOf("c") > -1) {
+					image = 'images/cas.png';
+				}
 				else {
-					image = 'images/cas.png'
+					image = 'images/ms.png';
 				}
 				//console.log(x + ' ' + y);
 				if(sim)
 				{
-					x = (x/2500)*(50*1/69) - 97.4458;
-					y = (y/2500)*(50*1/69) + 35.2086;
+					x = (x/2000)*(3*1/69) - 97.4458;
+					y = (y/2000)*(3*1/69) + 35.2086;
 				}
 				
-				console.log('mapping ...');
+				//console.log(x + ' ' + y);
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(y,x),
 					map: map,
 					title: data[i].pid,
 					icon: image
 				});
-				map.setCenter(new google.maps.LatLng(data[0].y,data[0].x));
+				map.setCenter(new google.maps.LatLng(y,x));
 			}
 		});
 	});

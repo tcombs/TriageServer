@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var geoStrin = "postgres://tyler:tyler@localhost/geolife";
-var simString = "postgres://tyler:tyler@localhost/tyler";
+var simString = "postgres://tyler:tyler@localhost/sim";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
